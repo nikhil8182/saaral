@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import Hero from '../components/Hero';
 import About from '../components/About';
+import WhySaaral from '../components/WhySaaral';
 import BakingProcess from '../components/BakingProcess';
 import Products from '../components/Products';
 import Testimonials from '../components/Testimonials';
@@ -40,6 +41,7 @@ const HomePage = () => {
       <MobileOptimizer />
       <Hero />
       <About />
+      <WhySaaral />
       <BakingProcess />
       <Products />
       <Testimonials />

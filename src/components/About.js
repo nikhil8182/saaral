@@ -28,16 +28,16 @@ const About = () => {
         </div>
         <div className="about-content">
           <div className="about-text">
-            <h3>Baking with Nature's Bounty</h3>
+            <h3>Born in Coimbatore, Crafted with Soul</h3>
             <p>
-              At Saaral Bakes, we believe that the best bread comes from the purest ingredients. 
-              Located in the lush, green landscape of Coimbatore, we draw inspiration from the 
-              natural beauty around us.
+              Saaral Bakes was born in Coimbatore with one rule: every tray leaves the oven 
+              the same day it's sold. We marry South‑Indian nostalgia with modern craft—think 
+              cardamom‑kissed honey cake beside a dark‑chocolate sourdough.
             </p>
             <p>
-              Our bakery combines time-honored baking traditions with locally sourced, organic 
-              ingredients. From the early morning mist to the warm afternoon sun, every loaf we 
-              create captures the essence of our beautiful Tamil Nadu surroundings.
+              Small batch, no shortcuts, plenty of soul. Our master bakers start before dawn, 
+              kneading life into every loaf with traditional techniques and the finest ingredients 
+              sourced from within Tamil Nadu. Every bite tells a story of heritage, purity, and care.
             </p>
             <div className="about-features">
               {features.map((feature, index) => (
@@ -53,7 +53,7 @@ const About = () => {
           </div>
           <div className="about-image">
             <div className="image-placeholder">
-              <p>🏞️ Beautiful bakery surrounded by Coimbatore's natural landscape</p>
+              <p>🏞️ From Coimbatore's heart to yours—every drop counts</p>
             </div>
           </div>
         </div>

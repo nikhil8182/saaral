@@ -72,10 +72,9 @@ const Hero = () => {
         }}>
           <div className="hero-badge">🌿 Est. 2024 • Coimbatore</div>
           <h1 className="hero-title">
-            <span className="title-word">Fresh</span>
-            <span className="title-word">from</span>
-            <span className="title-word">Nature's</span>
-            <span className="title-word">Heart</span>
+            <span className="title-word">Every</span>
+            <span className="title-word">Drop</span>
+            <span className="title-word">Counts</span>
           </h1>
           <p className="hero-subtitle">
             {greeting}Artisan baked goods crafted with love, natural ingredients, and traditional methods in the beautiful city of Coimbatore
