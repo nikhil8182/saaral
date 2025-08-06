@@ -43,6 +43,11 @@ const Footer = () => {
                   Location
                 </a>
               </li>
+              <li>
+                <a href="#brand-book" onClick={(e) => handleNavClick(e, '#brand-book')}>
+                  Brand Guide
+                </a>
+              </li>
             </ul>
           </div>
           <div className="footer-section">

@@ -60,6 +60,11 @@ const Navbar = () => {
             </a>
           </li>
           <li className="nav-item">
+            <a href="#brand-book" className="nav-link" onClick={(e) => handleNavClick(e, '#brand-book')}>
+              Brand Guide
+            </a>
+          </li>
+          <li className="nav-item">
             <a href="#contact" className="nav-link" onClick={(e) => handleNavClick(e, '#contact')}>
               Contact
             </a>

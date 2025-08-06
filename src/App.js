@@ -5,6 +5,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Products from './components/Products';
 import Location from './components/Location';
+import BrandBook from './components/BrandBook';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
@@ -69,6 +70,7 @@ function App() {
       <About />
       <Products />
       <Location />
+      <BrandBook />
       <Contact />
       <Footer />
       <ScrollToTop />
