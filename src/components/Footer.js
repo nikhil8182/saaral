@@ -48,9 +48,9 @@ const Footer = () => {
           <div className="footer-section">
             <h4>Follow Us</h4>
             <div className="social-links">
-              <a href="#" onClick={(e) => e.preventDefault()}>📘 Facebook</a>
-              <a href="#" onClick={(e) => e.preventDefault()}>📷 Instagram</a>
-              <a href="#" onClick={(e) => e.preventDefault()}>🐦 Twitter</a>
+              <button onClick={() => alert('Facebook page coming soon!')}>📘 Facebook</button>
+              <button onClick={() => alert('Instagram page coming soon!')}>📷 Instagram</button>
+              <button onClick={() => alert('Twitter page coming soon!')}>🐦 Twitter</button>
             </div>
           </div>
         </div>
