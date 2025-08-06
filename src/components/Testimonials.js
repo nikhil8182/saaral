@@ -1,8 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 const Testimonials = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
+  const [isSwiping, setIsSwiping] = useState(false);
+  const containerRef = useRef(null);
 
   const testimonials = [
     {
@@ -67,6 +71,35 @@ const Testimonials = () => {
     goToSlide((currentSlide - 1 + testimonials.length) % testimonials.length);
   };
 
+  // Touch handlers for mobile swipe
+  const handleTouchStart = (e) => {
+    setTouchStart(e.targetTouches[0].clientX);
+    setIsSwiping(true);
+    setIsAutoPlaying(false);
+  };
+
+  const handleTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe) {
+      nextSlide();
+    } else if (isRightSwipe) {
+      prevSlide();
+    }
+
+    setIsSwiping(false);
+    // Resume auto-play after 10 seconds
+    setTimeout(() => setIsAutoPlaying(true), 10000);
+  };
+
   return (
     <section className="testimonials">
       <div className="container">
@@ -80,10 +113,19 @@ const Testimonials = () => {
             <span>‹</span>
           </button>
 
-          <div className="testimonials-container">
+          <div 
+            className="testimonials-container"
+            ref={containerRef}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+          >
             <div 
               className="testimonials-track" 
-              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+              style={{ 
+                transform: `translateX(-${currentSlide * 100}%)`,
+                transition: isSwiping ? 'none' : 'transform 0.5s ease'
+              }}
             >
               {testimonials.map((testimonial) => (
                 <div key={testimonial.id} className="testimonial-slide">

@@ -7,6 +7,7 @@ import Testimonials from '../components/Testimonials';
 import Location from '../components/Location';
 import Newsletter from '../components/Newsletter';
 import Contact from '../components/Contact';
+import MobileOptimizer from '../components/MobileOptimizer';
 
 const HomePage = () => {
   useEffect(() => {
@@ -36,6 +37,7 @@ const HomePage = () => {
 
   return (
     <div className="homepage">
+      <MobileOptimizer />
       <Hero />
       <About />
       <BakingProcess />

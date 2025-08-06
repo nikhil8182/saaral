@@ -4,6 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -11,17 +12,44 @@ const Navbar = () => {
       setScrolled(window.scrollY > 50);
     };
 
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+      // Close mobile menu when resizing to desktop
+      if (window.innerWidth > 768) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    // Check mobile state on mount
+    handleResize();
+
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleResize);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   const handleMenuToggle = () => {
     setIsMenuOpen(!isMenuOpen);
+    // Prevent body scroll when mobile menu is open
+    if (!isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+    document.body.style.overflow = 'unset';
   };
 
   const handleNavClick = (e, targetId) => {
     e.preventDefault();
-    setIsMenuOpen(false);
+    closeMenu();
     
     // If we're on home page, scroll to section
     if (location.pathname === '/' && targetId.startsWith('#')) {
@@ -53,7 +81,7 @@ const Navbar = () => {
                 Home
               </a>
             ) : (
-              <Link to="/" className="nav-link" onClick={() => setIsMenuOpen(false)}>
+              <Link to="/" className="nav-link" onClick={closeMenu}>
                 Home
               </Link>
             )}
@@ -64,7 +92,7 @@ const Navbar = () => {
                 About
               </a>
             ) : (
-              <Link to="/#about" className="nav-link" onClick={() => setIsMenuOpen(false)}>
+              <Link to="/#about" className="nav-link" onClick={closeMenu}>
                 About
               </Link>
             )}
@@ -75,7 +103,7 @@ const Navbar = () => {
                 Our Breads
               </a>
             ) : (
-              <Link to="/#products" className="nav-link" onClick={() => setIsMenuOpen(false)}>
+              <Link to="/#products" className="nav-link" onClick={closeMenu}>
                 Our Breads
               </Link>
             )}
@@ -86,13 +114,13 @@ const Navbar = () => {
                 Visit Us
               </a>
             ) : (
-              <Link to="/#location" className="nav-link" onClick={() => setIsMenuOpen(false)}>
+              <Link to="/#location" className="nav-link" onClick={closeMenu}>
                 Visit Us
               </Link>
             )}
           </li>
           <li className="nav-item">
-            <Link to="/brand-guide" className="nav-link" onClick={() => setIsMenuOpen(false)}>
+            <Link to="/brand-guide" className="nav-link" onClick={closeMenu}>
               Brand Guide
             </Link>
           </li>
@@ -102,7 +130,7 @@ const Navbar = () => {
                 Contact
               </a>
             ) : (
-              <Link to="/#contact" className="nav-link" onClick={() => setIsMenuOpen(false)}>
+              <Link to="/#contact" className="nav-link" onClick={closeMenu}>
                 Contact
               </Link>
             )}
@@ -117,6 +145,11 @@ const Navbar = () => {
           <span className="bar"></span>
         </div>
       </div>
+      
+      {/* Mobile overlay */}
+      {isMenuOpen && isMobile && (
+        <div className="mobile-overlay" onClick={closeMenu}></div>
+      )}
     </nav>
   );
 };
