@@ -1656,6 +1656,49 @@ p {
         flex-direction: column;
         gap: 1rem;
     }
+    
+    /* Extra Small Mobile Brand Book */
+    .brand-nav {
+        padding: 0.25rem 0;
+    }
+    
+    .nav-grid {
+        grid-template-columns: 1fr;
+        gap: 0.25rem;
+    }
+    
+    .nav-item {
+        padding: 0.5rem;
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 0.75rem;
+    }
+    
+    .nav-icon {
+        font-size: 1rem;
+        margin-bottom: 0;
+    }
+    
+    .nav-title {
+        font-size: 0.8rem;
+    }
+    
+    .brand-section {
+        padding: 2rem 0;
+    }
+    
+    .section-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .brand-hero {
+        min-height: 60vh;
+        padding: 1.5rem 0;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
 }
 
 /* Enhanced Brand Book Page Styles */
@@ -3312,6 +3355,54 @@ p {
     
     .mood-tags {
         justify-content: flex-start;
+    }
+    
+    /* Mobile Brand Book Navigation */
+    .brand-nav {
+        position: relative;
+        top: auto;
+        padding: 0.5rem 0;
+    }
+    
+    .nav-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
+    
+    .nav-item {
+        padding: 0.75rem 0.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .nav-icon {
+        font-size: 1.2rem;
+        margin-bottom: 0.25rem;
+    }
+    
+    .nav-title {
+        font-size: 0.75rem;
+    }
+    
+    /* Mobile Brand Sections */
+    .brand-section {
+        padding: 3rem 0;
+    }
+    
+    .section-header h2 {
+        font-size: 2rem;
+    }
+    
+    .brand-hero {
+        min-height: 70vh;
+        padding: 2rem 0;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
     }
 }
 
