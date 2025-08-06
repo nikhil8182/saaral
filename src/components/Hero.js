@@ -99,7 +99,7 @@ const Hero = () => {
               className="btn btn-primary btn-large"
               onClick={(e) => handleNavClick(e, '#products')}
             >
-              <span>Explore Our Breads</span>
+              <span>Discover Our Bakes</span>
               <span className="btn-arrow">→</span>
             </a>
             <a 

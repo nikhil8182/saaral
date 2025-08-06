@@ -245,7 +245,7 @@ const Products = () => {
       <div className="container">
         <div className="section-header">
           <h2>Our Signature Bakes</h2>
-          <p>Handcrafted with traditional methods and modern innovation</p>
+          <p>Handcrafted fresh daily with traditional methods and modern innovation</p>
         </div>
 
         <div className="category-tabs">
@@ -287,7 +287,7 @@ const Products = () => {
               </div>
               <div className="product-footer">
                 <span className="price">{product.price}</span>
-                <button className="order-btn">Order Now</button>
+                <div className="availability">Available fresh daily</div>
               </div>
             </div>
           ))}

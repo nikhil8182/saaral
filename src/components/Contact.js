@@ -48,7 +48,7 @@ const Contact = () => {
     },
     {
       icon: '📱',
-      title: 'WhatsApp Orders',
+      title: 'WhatsApp Chat',
       value: '+91 98765 43210',
       clickable: true
     }

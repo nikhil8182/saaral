@@ -947,20 +947,22 @@ p {
     font-family: var(--font-heading);
 }
 
-.order-btn {
-    background: var(--monsoon-green);
-    color: var(--white);
-    border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: var(--border-radius);
+.availability {
+    color: var(--monsoon-green);
     font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    background: var(--morning-dew);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
-.order-btn:hover {
-    background: var(--mist-green);
-    transform: translateY(-2px);
+.availability::before {
+    content: '✓';
+    color: var(--mist-green);
+    font-weight: 700;
 }
 
 /* Location Section */
@@ -1436,14 +1438,12 @@ p {
     
     .product-footer {
         padding: 1rem 1.5rem;
-        flex-direction: column;
-        gap: 1rem;
         text-align: center;
     }
     
-    .order-btn {
-        width: 100%;
-        padding: 1rem;
+    .availability {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
     }
 }
 

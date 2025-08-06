@@ -109,9 +109,9 @@ const Newsletter = () => {
             <div className="newsletter-benefits">
               <h4>Member Benefits</h4>
               <ul>
-                <li>🌟 Early access to new products</li>
+                <li>🌟 Early updates on new bakes</li>
                 <li>📚 Exclusive baking guides</li>
-                <li>💚 10% off your first order</li>
+                <li>💚 Special tasting invitations</li>
                 <li>🎂 Birthday surprises</li>
               </ul>
             </div>
