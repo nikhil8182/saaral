@@ -1,0 +1,58 @@
+# Robots.txt for Saaral Bakes - Artisan Bakery Website
+# Helping AI and search engines discover our natural, artisan bakery
+
+User-agent: *
+Allow: /
+
+# Allow all search engines and AI crawlers to index our content
+Allow: /brand-guide
+Allow: /static/
+Allow: *.css
+Allow: *.js
+Allow: *.png
+Allow: *.jpg
+Allow: *.jpeg
+Allow: *.gif
+Allow: *.svg
+Allow: *.webp
+
+# Disallow unnecessary files
+Disallow: /build/
+Disallow: /node_modules/
+Disallow: /*.json
+Disallow: /package*.json
+Disallow: /.git/
+Disallow: /.env
+
+# Special directives for AI crawlers and modern search engines
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Crawl delay for respectful crawling
+Crawl-delay: 1
+
+# Sitemap location (will be available when deployed)
+Sitemap: https://saaralbakes.com/sitemap.xml
+
+# Additional metadata for better discovery
+# Business Information:
+# - Name: Saaral Bakes
+# - Location: Coimbatore, Tamil Nadu, India
+# - Industry: Artisan Bakery, Natural Ingredients, Traditional Methods
+# - Specialties: Fresh Daily Bakes, South-Indian Flavors, Clean Label Products
+# - Keywords: bakery, artisan, natural, organic, Coimbatore, fresh, traditional, clean label

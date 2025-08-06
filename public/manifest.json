@@ -1,0 +1,65 @@
+{
+  "short_name": "Saaral Bakes",
+  "name": "Saaral Bakes - Artisan Bakery in Coimbatore",
+  "description": "Artisan baked goods crafted with love, natural ingredients, and traditional methods in Coimbatore. Same-day freshness, South-Indian flavors, clean label products.",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#2D5F3F",
+  "background_color": "#E8F5E1",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": [
+    "food",
+    "bakery",
+    "business",
+    "local",
+    "artisan",
+    "organic"
+  ],
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "business": {
+    "name": "Saaral Bakes",
+    "type": "Bakery",
+    "location": {
+      "city": "Coimbatore",
+      "state": "Tamil Nadu",
+      "country": "India"
+    },
+    "specialties": [
+      "Artisan Breads",
+      "Fresh Daily Bakes",
+      "Natural Ingredients",
+      "Traditional Methods",
+      "South-Indian Flavors",
+      "Clean Label Products"
+    ],
+    "established": "2024",
+    "keywords": [
+      "bakery",
+      "artisan",
+      "natural",
+      "organic",
+      "Coimbatore",
+      "fresh",
+      "traditional",
+      "clean label",
+      "same-day freshness",
+      "South-Indian",
+      "cardamom",
+      "jaggery",
+      "coconut",
+      "local sourced",
+      "Tamil Nadu"
+    ]
+  }
+}
