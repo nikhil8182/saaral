@@ -145,6 +145,7 @@ const BrandBookPage = () => {
     { id: 'typography', title: 'Typography', icon: '✏️' },
     { id: 'principles', title: 'Principles', icon: '⭐' },
     { id: 'logo', title: 'Logo', icon: '🌿' },
+    { id: 'logo-variations', title: 'Logo Variations', icon: '🎨' },
     { id: 'voice', title: 'Voice & Tone', icon: '🗣️' },
     { id: 'photography', title: 'Photography', icon: '📸' },
     { id: 'applications', title: 'Applications', icon: '📱' }
@@ -500,6 +501,103 @@ const BrandBookPage = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Logo Variations */}
+      <section id="logo-variations" className={`brand-section ${isVisible['logo-variations'] ? 'animate-in' : ''}`}>
+        <div className="container">
+          <div className="section-header">
+            <h2>Logo Variations</h2>
+            <div className="header-decoration">🎨</div>
+          </div>
+          
+          <div className="logo-variations-grid">
+            <div className="logo-variation-card">
+              <div className="logo-preview">
+                <h1 style={{ fontFamily: 'Merriweather', fontWeight: '700', fontSize: '3rem', color: '#2D5F3F' }}>
+                  Saaral Bakes
+                </h1>
+              </div>
+              <div className="logo-info">
+                <h4>Classic Serif</h4>
+                <p>Merriweather Bold</p>
+                <span className="logo-traits">Traditional • Elegant • Trustworthy</span>
+              </div>
+            </div>
+
+            <div className="logo-variation-card">
+              <div className="logo-preview">
+                <h1 style={{ fontFamily: 'Open Sans', fontWeight: '600', fontSize: '3rem', color: '#2D5F3F', letterSpacing: '-0.02em' }}>
+                  SAARAL BAKES
+                </h1>
+              </div>
+              <div className="logo-info">
+                <h4>Modern Clean</h4>
+                <p>Open Sans Semibold</p>
+                <span className="logo-traits">Contemporary • Approachable • Clear</span>
+              </div>
+            </div>
+
+            <div className="logo-variation-card">
+              <div className="logo-preview">
+                <h1 style={{ fontFamily: 'Playfair Display', fontWeight: '900', fontSize: '3rem', color: '#2D5F3F' }}>
+                  Saaral Bakes
+                </h1>
+              </div>
+              <div className="logo-info">
+                <h4>Elegant Display</h4>
+                <p>Playfair Display Black</p>
+                <span className="logo-traits">Luxurious • Sophisticated • High-End</span>
+              </div>
+            </div>
+
+            <div className="logo-variation-card">
+              <div className="logo-preview">
+                <h1 style={{ fontFamily: 'Poppins', fontWeight: '700', fontSize: '3rem', color: '#2D5F3F', letterSpacing: '-0.03em' }}>
+                  Saaral Bakes
+                </h1>
+              </div>
+              <div className="logo-info">
+                <h4>Friendly Modern</h4>
+                <p>Poppins Bold</p>
+                <span className="logo-traits">Warm • Rounded • Welcoming</span>
+              </div>
+            </div>
+
+            <div className="logo-variation-card">
+              <div className="logo-preview">
+                <h1 style={{ fontFamily: 'Cormorant Garamond', fontWeight: '700', fontSize: '3.5rem', color: '#2D5F3F' }}>
+                  Saaral Bakes
+                </h1>
+              </div>
+              <div className="logo-info">
+                <h4>Refined Classic</h4>
+                <p>Cormorant Garamond Bold</p>
+                <span className="logo-traits">Artisanal • Heritage • Premium</span>
+              </div>
+            </div>
+
+            <div className="logo-variation-card">
+              <div className="logo-preview stacked">
+                <h1 style={{ fontFamily: 'Playfair Display', fontWeight: '900', fontSize: '2.5rem', color: '#2D5F3F', marginBottom: '0' }}>
+                  SAARAL
+                </h1>
+                <p style={{ fontFamily: 'Open Sans', fontWeight: '300', fontSize: '1.2rem', color: '#7FB069', letterSpacing: '0.3em', marginTop: '-0.5rem' }}>
+                  BAKES
+                </p>
+              </div>
+              <div className="logo-info">
+                <h4>Stacked Combination</h4>
+                <p>Playfair + Open Sans</p>
+                <span className="logo-traits">Balanced • Versatile • Distinctive</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="logo-selection-note">
+            <p><strong>Note:</strong> These are prototype variations for consideration. The final logo will be refined based on the selected direction, with proper kerning, proportions, and icon integration.</p>
           </div>
         </div>
       </section>

@@ -474,14 +474,14 @@ p {
 
 .element-1 { 
     top: 15%; 
-    left: 20%; 
+    left: 20%;
     animation-delay: 0s;
     font-size: 3.5rem;
 }
 
 .element-2 { 
     top: 25%;
-    right: 20%; 
+    right: 20%;
     animation-delay: -2s;
     font-size: 4rem;
 }
@@ -3196,6 +3196,118 @@ p {
     padding-left: 0.5rem;
 }
 
+/* Logo Variations */
+.logo-variations-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.logo-variation-card {
+    background: var(--white);
+    border: 2px solid var(--morning-dew);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.logo-variation-card:hover {
+    border-color: var(--mist-green);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(45, 95, 63, 0.1);
+}
+
+.logo-preview {
+    background: var(--white);
+    padding: 3rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 160px;
+    position: relative;
+    overflow: hidden;
+}
+
+.logo-preview::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, var(--morning-dew) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.logo-variation-card:hover .logo-preview::before {
+    opacity: 0.5;
+}
+
+.logo-preview h1 {
+    margin: 0;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease;
+}
+
+.logo-variation-card:hover .logo-preview h1 {
+    transform: scale(1.05);
+}
+
+.logo-preview.stacked {
+    flex-direction: column;
+}
+
+.logo-preview.stacked h1 {
+    line-height: 1;
+}
+
+.logo-preview.stacked p {
+    margin: 0;
+    line-height: 1;
+}
+
+.logo-info {
+    padding: 1.5rem 2rem 2rem;
+    background: var(--morning-dew);
+}
+
+.logo-info h4 {
+    color: var(--monsoon-green);
+    margin: 0 0 0.5rem;
+    font-size: 1.25rem;
+}
+
+.logo-info p {
+    color: var(--text-light);
+    margin: 0 0 0.75rem;
+    font-size: 0.95rem;
+}
+
+.logo-traits {
+    display: inline-block;
+    color: var(--mist-green);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.logo-selection-note {
+    background: var(--sunset-peach);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+}
+
+.logo-selection-note p {
+    color: var(--monsoon-green);
+    margin: 0;
+    line-height: 1.7;
+}
+
 /* Voice & Tone */
 .voice-tone-grid {
     display: grid;
@@ -3435,6 +3547,29 @@ p {
     
     .nav-title {
         font-size: 0.75rem;
+    }
+    
+    /* Logo Variations Mobile */
+    .logo-variations-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .logo-preview {
+        padding: 2rem 1.5rem;
+        min-height: 120px;
+    }
+    
+    .logo-preview h1 {
+        font-size: 2rem !important;
+    }
+    
+    .logo-preview.stacked h1 {
+        font-size: 1.75rem !important;
+    }
+    
+    .logo-preview.stacked p {
+        font-size: 1rem !important;
     }
     
     /* Mobile Brand Sections */
