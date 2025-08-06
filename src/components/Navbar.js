@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,9 +22,13 @@ const Navbar = () => {
   const handleNavClick = (e, targetId) => {
     e.preventDefault();
     setIsMenuOpen(false);
-    const target = document.querySelector(targetId);
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    
+    // If we're on home page, scroll to section
+    if (location.pathname === '/' && targetId.startsWith('#')) {
+      const target = document.querySelector(targetId);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     }
   };
 
@@ -36,38 +42,70 @@ const Navbar = () => {
     >
       <div className="nav-container">
         <div className="nav-logo">
-          <h2>🌿 Saaral Bakes</h2>
+          <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+            <h2>🌿 Saaral Bakes</h2>
+          </Link>
         </div>
         <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
           <li className="nav-item">
-            <a href="#home" className="nav-link" onClick={(e) => handleNavClick(e, '#home')}>
-              Home
-            </a>
+            {location.pathname === '/' ? (
+              <a href="#home" className="nav-link" onClick={(e) => handleNavClick(e, '#home')}>
+                Home
+              </a>
+            ) : (
+              <Link to="/" className="nav-link" onClick={() => setIsMenuOpen(false)}>
+                Home
+              </Link>
+            )}
           </li>
           <li className="nav-item">
-            <a href="#about" className="nav-link" onClick={(e) => handleNavClick(e, '#about')}>
-              About
-            </a>
+            {location.pathname === '/' ? (
+              <a href="#about" className="nav-link" onClick={(e) => handleNavClick(e, '#about')}>
+                About
+              </a>
+            ) : (
+              <Link to="/#about" className="nav-link" onClick={() => setIsMenuOpen(false)}>
+                About
+              </Link>
+            )}
           </li>
           <li className="nav-item">
-            <a href="#products" className="nav-link" onClick={(e) => handleNavClick(e, '#products')}>
-              Our Breads
-            </a>
+            {location.pathname === '/' ? (
+              <a href="#products" className="nav-link" onClick={(e) => handleNavClick(e, '#products')}>
+                Our Breads
+              </a>
+            ) : (
+              <Link to="/#products" className="nav-link" onClick={() => setIsMenuOpen(false)}>
+                Our Breads
+              </Link>
+            )}
           </li>
           <li className="nav-item">
-            <a href="#location" className="nav-link" onClick={(e) => handleNavClick(e, '#location')}>
-              Visit Us
-            </a>
+            {location.pathname === '/' ? (
+              <a href="#location" className="nav-link" onClick={(e) => handleNavClick(e, '#location')}>
+                Visit Us
+              </a>
+            ) : (
+              <Link to="/#location" className="nav-link" onClick={() => setIsMenuOpen(false)}>
+                Visit Us
+              </Link>
+            )}
           </li>
           <li className="nav-item">
-            <a href="#brand-book" className="nav-link" onClick={(e) => handleNavClick(e, '#brand-book')}>
+            <Link to="/brand-guide" className="nav-link" onClick={() => setIsMenuOpen(false)}>
               Brand Guide
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a href="#contact" className="nav-link" onClick={(e) => handleNavClick(e, '#contact')}>
-              Contact
-            </a>
+            {location.pathname === '/' ? (
+              <a href="#contact" className="nav-link" onClick={(e) => handleNavClick(e, '#contact')}>
+                Contact
+              </a>
+            ) : (
+              <Link to="/#contact" className="nav-link" onClick={() => setIsMenuOpen(false)}>
+                Contact
+              </Link>
+            )}
           </li>
         </ul>
         <div 

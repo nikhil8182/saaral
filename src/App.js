@@ -1,12 +1,9 @@
 import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Products from './components/Products';
-import Location from './components/Location';
-import BrandBook from './components/BrandBook';
-import Contact from './components/Contact';
+import HomePage from './pages/HomePage';
+import BrandBookPage from './pages/BrandBookPage';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 
@@ -64,17 +61,25 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <Navbar />
-      <Hero />
-      <About />
-      <Products />
-      <Location />
-      <BrandBook />
-      <Contact />
-      <Footer />
-      <ScrollToTop />
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={
+            <>
+              <Navbar />
+              <HomePage />
+              <Footer />
+              <ScrollToTop />
+            </>
+          } />
+          <Route path="/brand-guide" element={
+            <>
+              <BrandBookPage />
+            </>
+          } />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

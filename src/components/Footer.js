@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const handleNavClick = (e, targetId) => {
@@ -44,9 +45,9 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#brand-book" onClick={(e) => handleNavClick(e, '#brand-book')}>
+                <Link to="/brand-guide">
                   Brand Guide
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
