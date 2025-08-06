@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 const BrandBookPage = () => {
   const [copiedColor, setCopiedColor] = useState('');
+  const [copyError, setCopyError] = useState('');
   const [activeSection, setActiveSection] = useState('story');
   const [isVisible, setIsVisible] = useState({});
 
@@ -67,10 +68,48 @@ const BrandBookPage = () => {
     }
   ];
 
-  const copyToClipboard = (color) => {
-    navigator.clipboard.writeText(color.hex);
-    setCopiedColor(color.hex);
-    setTimeout(() => setCopiedColor(''), 2000);
+  const copyToClipboard = async (color) => {
+    // Clear any previous error
+    setCopyError('');
+    
+    try {
+      // Try modern clipboard API first
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(color.hex);
+        setCopiedColor(color.hex);
+        setTimeout(() => setCopiedColor(''), 2000);
+      } else {
+        // Fallback for older browsers or non-secure contexts
+        const textArea = document.createElement('textarea');
+        textArea.value = color.hex;
+        textArea.style.position = 'fixed';
+        textArea.style.left = '-999999px';
+        textArea.style.top = '-999999px';
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        
+        try {
+          const successful = document.execCommand('copy');
+          if (successful) {
+            setCopiedColor(color.hex);
+            setTimeout(() => setCopiedColor(''), 2000);
+          } else {
+            throw new Error('Copy command failed');
+          }
+        } catch (err) {
+          console.error('Fallback copy failed:', err);
+          setCopyError(color.hex);
+          setTimeout(() => setCopyError(''), 3000);
+        } finally {
+          document.body.removeChild(textArea);
+        }
+      }
+    } catch (err) {
+      console.error('Copy to clipboard failed:', err);
+      setCopyError(color.hex);
+      setTimeout(() => setCopyError(''), 3000);
+    }
   };
 
   const brandPrinciples = [
@@ -257,6 +296,9 @@ const BrandBookPage = () => {
                     <span className="click-hint">Click to copy</span>
                     {copiedColor === color.hex && (
                       <span className="copied-indicator">Copied! ✓</span>
+                    )}
+                    {copyError === color.hex && (
+                      <span className="copy-error">Copy failed. Manual copy: {color.hex}</span>
                     )}
                   </div>
                 </div>
